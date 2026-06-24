@@ -55,4 +55,6 @@ def plot_rgb_and_indices(
     if output:
         Path(output).parent.mkdir(parents=True, exist_ok=True)
         fig.savefig(output, dpi=150, bbox_inches="tight")
-    plt.show()
+        plt.close(fig)
+    else:
+        plt.show()

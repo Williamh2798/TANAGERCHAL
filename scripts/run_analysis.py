@@ -68,6 +68,7 @@ def main() -> None:
         ax.axis("off")
         out = OUTPUT_DIR / "rgb_preview.png"
         fig.savefig(out, dpi=150, bbox_inches="tight")
+        plt.close(fig)
         print(f"wrote {out}")
         return
 
@@ -80,6 +81,23 @@ def main() -> None:
 
     diff = np.nanmean(np.abs(indices["ndwi"] - indices["ndwi_multispectral"]))
     print(f"Mean |NDWI_hyperspectral - NDWI_8band| = {diff:.4f}")
+
+    fig, axes = plt.subplots(1, 3, figsize=(14, 4))
+    for ax, arr, title in zip(
+        axes,
+        [indices["ndwi"], indices["ndwi_multispectral"], np.abs(indices["ndwi"] - indices["ndwi_multispectral"])],
+        ["Hyperspectral NDWI", "Simulated 8-band NDWI", "|Difference|"],
+    ):
+        im = ax.imshow(arr, cmap="Blues" if "Diff" not in title else "magma")
+        ax.set_title(title)
+        ax.axis("off")
+        plt.colorbar(im, ax=ax, fraction=0.046)
+    plt.tight_layout()
+    ndwi_out = OUTPUT_DIR / "ndwi_comparison.png"
+    fig.savefig(ndwi_out, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"wrote {OUTPUT_DIR / 'water_quality_maps.png'}")
+    print(f"wrote {ndwi_out}")
 
 
 if __name__ == "__main__":
