@@ -25,6 +25,6 @@ With expanded Tanager coverage we would: (1) time-series analysis along the full
 
 After pushing to GitHub, use:
 
-`https://github.com/YOUR_USERNAME/TANAGERCHAL`
+`https://github.com/Williamh2798/TANAGERCHAL`
 
 Ensure the repo is public and includes `notebooks/coastal_mozambique.ipynb`, `README.md`, and `outputs/` figures.
