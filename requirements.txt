@@ -1,0 +1,8 @@
+numpy>=1.24
+matplotlib>=3.7
+rasterio>=1.3
+pystac-client>=0.7
+requests>=2.31
+hypercoast>=0.6
+jupyter>=1.0
+ipykernel>=6.25
