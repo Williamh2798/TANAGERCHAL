@@ -48,6 +48,8 @@ python scripts/find_scenes.py 34.85 -19.83
 jupyter notebook notebooks/coastal_mozambique.ipynb
 ```
 
+Example outputs (from scene `20250626_082641_74_4001`) are in [`outputs/`](outputs/).
+
 ## Repository layout
 
 ```

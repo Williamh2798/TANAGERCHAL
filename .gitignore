@@ -7,5 +7,7 @@ venv/
 data/*.tif
 data/*.h5
 data/*.hdf5
-outputs/
+outputs/*
+!outputs/*.png
+!outputs/.gitkeep
 .DS_Store
